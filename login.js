@@ -23,8 +23,6 @@ app.listen(3000, () => {
   console.log('App listening on port 3000');
 });
 
-
-
 async function main(){
 const { connect, KeyPair, keyStores, utils } = nearAPI;
 const CREDENTIALS_DIR = ".near-credentials";
@@ -41,11 +39,12 @@ if (process.argv.length !== 5) {
   console.info(HELP);
   process.exit(1);
 }
+//generating neccessary things for account creation.
 const { parseSeedPhrase, generateSeedPhrase } = require('near-seed-phrase');
 
-    // to create a seed phrase with its corresponding Keys
+// to create a seed phrase with its corresponding Keys
 const {seedPhrase, publicKey, secretKey} = generateSeedPhrase()
-    
+//printing pass phrase, public key and secretkey.
 console.log(seedPhrase);
 console.log(publicKey);
 console.log(secretKey);
