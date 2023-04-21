@@ -8,7 +8,7 @@ const homedir = require("os").homedir();
 
 let k ;
 const HELP = `Please run this script in the following format:
-    node app.js CREATOR_ACCOUNT.testnet NEW_ACCOUNT.testnet AMOUNT Then open your localhost and open the port mentioned.
+    node app.js CREATOR_ACCOUNT.testnet AMOUNT Then open your localhost and open the port mentioned.
 `;
 app.get('/', (req, res) => {
     
@@ -35,10 +35,6 @@ const config = {
   nodeUrl: "https://rpc.testnet.near.org",
 };
 
-if (process.argv.length !== 5) {
-  console.info(HELP);
-  process.exit(1);
-}
 //generating neccessary things for account creation.
 const { parseSeedPhrase, generateSeedPhrase } = require('near-seed-phrase');
 
